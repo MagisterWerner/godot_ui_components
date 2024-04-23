@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dst0og0kjqo74"]
+[gd_scene load_steps=28 format=3 uid="uid://dst0og0kjqo74"]
 
 [ext_resource type="PackedScene" uid="uid://ccpeukrdsfbkm" path="res://scenes/balatro/card.tscn" id="1_0kik2"]
 [ext_resource type="Shader" path="res://scenes/balatro/shaders/noise_move.gdshader" id="1_lux0i"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://scenes/balatro/resources/bbcode_rotation.gd" id="3_01uac"]
 [ext_resource type="Shader" path="res://scenes/shared/shaders/dissolve.gdshader" id="3_g5bs6"]
 [ext_resource type="Script" path="res://scenes/balatro/scripts/destroy_area.gd" id="4_4fdh5"]
-[ext_resource type="Shader" path="res://scenes/balatro/shaders/vhs.gdshader" id="6_xsyrq"]
 [ext_resource type="Script" path="res://scenes/balatro/scripts/drawn_cards.gd" id="7_svh6l"]
 [ext_resource type="Shader" path="res://scenes/shared/shaders/fake_3D.gdshader" id="8_v84jj"]
 [ext_resource type="Texture2D" uid="uid://cskh758f74ngv" path="res://scenes/balatro/visuals/Tiles_A_white.png" id="9_h0dct"]
@@ -117,30 +116,6 @@ shader_parameter/cull_back = true
 shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1d8k0"]
-shader = ExtResource("6_xsyrq")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.15
-shader_parameter/scanlines_width = 0.382
-shader_parameter/grille_opacity = 0.085
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = true
-shader_parameter/roll = false
-shader_parameter/roll_speed = 8.0
-shader_parameter/roll_size = 0.0
-shader_parameter/roll_variation = 0.1
-shader_parameter/distort_intensity = 0.05
-shader_parameter/noise_opacity = 0.0
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.0
-shader_parameter/aberration = 4.75e-08
-shader_parameter/brightness = 1.4
-shader_parameter/discolor = false
-shader_parameter/warp_amount = 0.882
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.0
-shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="Environment" id="Environment_46hvu"]
 background_mode = 3
@@ -403,20 +378,6 @@ texture = ExtResource("9_h0dct")
 expand_mode = 1
 
 [node name="PostProcessing" type="CanvasLayer" parent="."]
-
-[node name="ScanLines" type="ColorRect" parent="PostProcessing"]
-material = SubResource("ShaderMaterial_1d8k0")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -352.0
-offset_top = -198.0
-offset_right = 352.0
-offset_bottom = 198.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_lock_ = true
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="PostProcessing"]
 
